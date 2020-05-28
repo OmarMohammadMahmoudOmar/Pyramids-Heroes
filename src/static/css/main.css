@@ -261,6 +261,12 @@ form#search input {
 .bg-black {
 	background-color: #000 !important;
 }
+.float-left {
+	float: left;
+}
+.float-right {
+	float: right;
+}
 /* Article Carousel View */
 .article-carousel-view {
 	height: 700px;
@@ -293,8 +299,8 @@ form#search input {
 }
 .article-author img {
 	margin-left: 5px;
-	width: 45px !important;
-	height: 45px;
+	width: 40px !important;
+	height: 40px;
 	border-radius: 50%;
 }
 .article-author .count {

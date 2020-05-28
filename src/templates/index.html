@@ -46,7 +46,7 @@
 				<article class="article-carousel-view" style="background-image: url('{{article.thumbnail.url}}');">
 					<div class="overlay">
 						<div class="article-content">
-							<h1><a href="" class="text-white">{{article.title}}</a></h1>
+							<h1><a href="{{ article.get_article_url }}" class="text-white">{{article.title}}</a></h1>
 							<p>{{article.overview}}</p>
 							<div class="article-author">
 								<img src="{{ article.author.profile_pic.url }}" alt="{{ article.author }}" />

@@ -59,7 +59,8 @@ def search(request):
     if query:
         article_list = article_list.filter(
             Q(title__icontains=query) |
-            Q(overview__icontains=query)
+            Q(overview__icontains=query) |
+            Q(content__icontains=query)
         ).distinct()
 
     context = {
@@ -67,3 +68,15 @@ def search(request):
         'queryset': article_list
     }
     return render(request, 'search_result.html', context)
+
+
+def article_detail(request, id):
+    article = Article.objects.get(id=id)
+    context = {
+        'article': article
+    }
+
+    return render(request, 'article_detail.html', context)
+
+def contact(request):
+    return render(request, 'contact.html', {})

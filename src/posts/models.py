@@ -1,6 +1,7 @@
 from django.db import models
 from tinymce import HTMLField
 from django.contrib.auth import get_user_model
+from django.urls import reverse
 
 User = get_user_model()
 
@@ -63,6 +64,10 @@ class Article(models.Model):
         return Comment.objects.filter(article=self).count()
 
     def __str__(self): return self.title + ' vs. ' + self.title_ar
+
+    @property
+    def get_article_url(self):
+        return reverse('article', kwargs={"id": self.id})
 
 
 class Subscribe(models.Model):
