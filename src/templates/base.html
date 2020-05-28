@@ -41,7 +41,7 @@
 						<a href="#" class="link" id="themeSun"><i class="far fa-sun"></i></a>
 					</div>
 					<div class="nav-icon">
-						<a href="#" class="link"><i class="fas fa-search"></i></a>
+						<a href="#" class="link" id="searchButton"><i class="fas fa-search"></i></a>
 					</div>
 					{% if request.user.is_authenticated %}
 					<div class="nav-icon">
@@ -65,6 +65,12 @@
 				</div>
 			</nav>
 			<!-- End Navbar -->
+
+			<!-- Search Input -->
+			<div class="search-bg">
+				<form action="{% url 'search' %}" id="search"><input type="search" name="q" placeholder="searching for what?..." /></form>
+				<div class="close" id="closeButton"><i class="fas fa-times"></i></div>
+			</div>
 
 			<main>
 				{% block content %} {% endblock content %}

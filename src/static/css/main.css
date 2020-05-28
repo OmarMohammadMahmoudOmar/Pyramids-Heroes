@@ -145,6 +145,50 @@ a.opps {
 	}
 }
 /* End navbar */
+/* Start search */
+.search-bg {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	top: 0;
+	left: 0;
+	display: none;
+}
+.search-bg.open {
+	display: block;
+}
+form#search input {
+	border: 0;
+	position: absolute;
+	top: calc(50% - 35px);
+	left: calc(10% - 10px);
+	z-index: 99;
+	/* height: 100px; */
+	width: 80%;
+	height: 70px;
+	color: white;
+	border-bottom: 3px solid var(--mainColor);
+	font-size: 30px;
+	padding: 10px;
+	background: var(--mainBg);
+}
+.search-bg .close {
+	right: 15px;
+	top: 15px;
+	font-size: 20px;
+	position: absolute;
+	font-size: 30px;
+	cursor: pointer;
+	font-weight: bold;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: var(--mainColor);
+	text-align: center;
+	line-height: 50px;
+}
+/* End search */
 /* Start carousel */
 #carousel {
 	margin-top: 30px;

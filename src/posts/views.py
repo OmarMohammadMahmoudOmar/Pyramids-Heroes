@@ -1,6 +1,7 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, redirect, reverse
 from .models import Article, Subscribe
+from django.db.models.query_utils import Q
 
 
 def index(request):
@@ -49,3 +50,20 @@ def error_404(request, exception):
 
 def about(request):
     return render(request, 'about.html')
+
+
+def search(request):
+    article_list = Article.objects.all()
+    query = request.GET.get('q')
+
+    if query:
+        article_list = article_list.filter(
+            Q(title__icontains=query) |
+            Q(overview__icontains=query)
+        ).distinct()
+
+    context = {
+        'query': query.title() or 'All The Articles',
+        'queryset': article_list
+    }
+    return render(request, 'search_result.html', context)

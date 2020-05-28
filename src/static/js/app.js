@@ -35,3 +35,11 @@ sunButton.addEventListener('click', (e) => {
 // Adding the relative position to article author
 const articleAuthors = document.querySelectorAll('#articlesView .article-card .article-author');
 articleAuthors.forEach((article) => (article.style.position = 'absolute'));
+
+// Search Ahowing
+const searchButton = document.getElementById('searchButton');
+const searchParent = document.querySelector('.search-bg');
+const closeButton = document.getElementById('closeButton');
+
+searchButton.addEventListener('click', () => searchParent.classList.add('open'));
+closeButton.addEventListener('click', () => searchParent.classList.remove('open'));
